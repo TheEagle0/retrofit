@@ -23,9 +23,7 @@ class MainActivity : AppCompatActivity() {
         val call = getData.retrieveData()
         call.enqueue(object : Callback<OuterObject> {
             override fun onResponse(call: Call<OuterObject>, response: Response<OuterObject>) {
-                response.body()
-                generateList(response.body()!!.bigObject[0].articleList)
-
+                generateList(response.body()!!.bigObject.articleList)
             }
 
             override fun onFailure(call: Call<OuterObject>, t: Throwable) {}
