@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView
 import com.example.theeagle.appexample.R
 import com.example.theeagle.appexample.adapter.Adapter
 import com.example.theeagle.appexample.entity.DataEntity
-import com.example.theeagle.appexample.entity.OuterObject
+import com.example.theeagle.appexample.entity.Result
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,8 +23,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun observeViewModel(viewModel: ViewModel) {
-        viewModel.getDataObservable().observe(this, Observer { outerObject :OuterObject?->
-            outerObject!!.bigObject.articleList.run {
+        viewModel.getDataObservable().observe(this, Observer { outerObject : Result?->
+            outerObject!!.result.articleList.run {
                 generateList(this)
             }
         })

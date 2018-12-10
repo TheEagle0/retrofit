@@ -9,4 +9,4 @@ data class DataEntity(@field:SerializedName("sectionName") @Expose val articleNa
 
 data class DataList(@field:SerializedName("results") @Expose var articleList: MutableList<DataEntity>)
 
-data class OuterObject(@field:SerializedName("response") @Expose val bigObject: DataList)
+data class Result(@field:SerializedName("response") @Expose val result: DataList)
